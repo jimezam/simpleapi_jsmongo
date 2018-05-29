@@ -2,6 +2,7 @@
 ////////////////////////////////////////////////////////////////////////
 
 const express = require('express');
+const cors = require('cors')
 const bodyParser = require('body-parser');
 
 // Database configuration
@@ -23,6 +24,9 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 // Parse requests of content-type - "application/json"
 app.use(bodyParser.json())
+
+// Activate the CORS access on all routes
+app.use(cors())
 
 // Listening server port
 var port = process.env.PORT || 3000;
